@@ -285,7 +285,7 @@ def stripes():
 	# center lines
 	#
 	z = far
-	while z > -far:
+	while z > -z:
 		botrect(-0.5, 0.5, z, z - 4.0)
 		z = z - 10.0
 

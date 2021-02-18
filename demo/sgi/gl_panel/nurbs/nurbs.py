@@ -40,10 +40,10 @@ def draw_axis () :
 
 DELTA = 0.1
 
-def cross (p) :
+def cross(p):
 	p0 = [p[0], p[1], p[2]]
 	p1 = [p[0], p[1], p[2]]
-	for i in range (0, 3) :
+	for i in range(3):
 		p0[i] = p0[i] + DELTA
 		p1[i] = p1[i] - DELTA
 		smallline (p0, p1)
@@ -124,12 +124,12 @@ def make_lights():
 	# define material #1
 	#
 	a = []
-	a = a + [EMISSION, 0.0, 0.0, 0.0]
-	a = a + [AMBIENT,  0.1, 0.1, 0.1]
-	a = a + [DIFFUSE,  0.6, 0.3, 0.3]
-	a = a + [SPECULAR,  0.0, 0.6, 0.0]
-	a = a + [SHININESS, 2.0]
-	a = a + [LMNULL]
+	a += [EMISSION, 0.0, 0.0, 0.0]
+	a += [AMBIENT,  0.1, 0.1, 0.1]
+	a += [DIFFUSE,  0.6, 0.3, 0.3]
+	a += [SPECULAR,  0.0, 0.6, 0.0]
+	a += [SHININESS, 2.0]
+	a += [LMNULL]
 	lmdef(DEFMATERIAL, 1, a)
 	#
 	# turn on lighting

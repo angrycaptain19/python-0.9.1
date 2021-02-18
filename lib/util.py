@@ -26,5 +26,5 @@ def readopenfile(fp):
 	while 1:
 		buf = fp.read(BUFSIZE)
 		if not buf: break
-		data = data + buf
+		data += buf
 	return data

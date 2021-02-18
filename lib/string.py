@@ -23,7 +23,7 @@ def lower(s):
 	res = ''
 	for c in s:
 		if 'A' <= c <= 'Z': c = _caseswap[c]
-		res = res + c
+		res += c
 	return res
 
 # Convert lower case letters to UPPER CASE
@@ -31,7 +31,7 @@ def upper(s):
 	res = ''
 	for c in s:
 		if 'a' <= c <= 'z': c = _caseswap[c]
-		res = res + c
+		res += c
 	return res
 
 # Swap lower case letters and UPPER CASE
@@ -39,14 +39,16 @@ def swapcase(s):
 	res = ''
 	for c in s:
 		if 'a' <= c <= 'z' or 'A' <= c <= 'Z': c = _caseswap[c]
-		res = res + c
+		res += c
 	return res
 
 # Strip leading and trailing tabs and spaces
 def strip(s):
 	i, j = 0, len(s)
-	while i < j and s[i] in whitespace: i = i+1
-	while i < j and s[j-1] in whitespace: j = j-1
+	while i < j and s[i] in whitespace:
+		i += 1
+	while i < j and s[j-1] in whitespace:
+		j -= 1
 	return s[i:j]
 
 # Split a string into a list of space/tab-separated words

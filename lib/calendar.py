@@ -171,8 +171,9 @@ def prweek(week, width):
 def weekheader(width):
 	str = ''
 	for i in range(7):
-		if str: str = str + ' '
-		str = str + day_abbr[i%7][:width]
+		if str:
+			str += ' '
+		str += day_abbr[i%7][:width]
 	return str
 
 # Print a month's calendar

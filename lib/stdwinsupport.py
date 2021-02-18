@@ -3,8 +3,8 @@
 import stdwin
 
 eventnames =              ['null', 'activate', 'char', 'command']
-eventnames = eventnames + ['mouse_down', 'mouse_move', 'mouse_up', 'menu']
-eventnames = eventnames + ['size', 'move', 'draw', 'timer', 'deactivate']
+eventnames += ['mouse_down', 'mouse_move', 'mouse_up', 'menu']
+eventnames += ['size', 'move', 'draw', 'timer', 'deactivate']
 
 we_null       =  0
 we_activate   =  1
@@ -21,7 +21,7 @@ we_timer      = 11
 we_deactivate = 12
 
 commandnames = ['?', 'close', 'left', 'right', 'up', 'down', 'cancel']
-commandnames = commandnames + ['backspace', 'tab', 'return']
+commandnames += ['backspace', 'tab', 'return']
 
 wc_close     = 1
 wc_left      = 2

@@ -9,7 +9,7 @@ def normalize(p): # Strip unnecessary zero coefficients
 	n = len(p)
 	while p:
 		if p[n-1]: return p[:n]
-		n = n-1
+		n -= 1
 	return []
 
 def plus(a, b):
@@ -27,8 +27,7 @@ def minus(a, b):
 	return normalize(res)
 
 def one(power, coeff): # Representation of coeff * x**power
-	res = []
-	for i in range(power): res.append(0)
+	res = [0 for _ in range(power)]
 	return res + [coeff]
 
 def times(a, b):

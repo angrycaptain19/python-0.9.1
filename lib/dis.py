@@ -49,18 +49,17 @@ def findlabels(code):
 	while i < n:
 		c = code[i]
 		op = ord(c)
-		i = i+1
+		i += 1
 		if op >= HAVE_ARGUMENT:
 			oparg = ord(code[i]) + ord(code[i+1])*256
-			i = i+2
+			i += 2
 			label = -1
 			if op in hasjrel:
 				label = i+oparg
 			elif op in hasjabs:
 				label = oparg
-			if label >= 0:
-				if label not in labels:
-					labels.append(label)
+			if label >= 0 and label not in labels:
+				labels.append(label)
 	return labels
 
 hasconst = []

@@ -51,18 +51,19 @@ PUT = 'put'
 
 # Aliases recognized by the parser
 
-alias = {}
-alias['n'] = N
-alias['s'] = S
-alias['e'] = E
-alias['w'] = W
-alias['u'] = U
-alias['d'] = D
-alias['i'] = INVENT
-alias['l'] = LOOK
-alias['b'] = BACK
-alias['take'] = GET
-alias['drop'] = PUT
+alias = {
+    'n': N,
+    's': S,
+    'e': E,
+    'w': W,
+    'u': U,
+    'd': D,
+    'i': INVENT,
+    'l': LOOK,
+    'b': BACK,
+    'take': GET,
+    'drop': PUT,
+}
 
 
 # Normalize a command, in place: truncate words to 6 chars, and expand aliases.

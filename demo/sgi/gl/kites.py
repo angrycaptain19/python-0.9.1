@@ -45,15 +45,14 @@ def viewobj (r, s, t, mat) :
 #
 # makeobj : the contructor of the object
 #
-def mkobj () :
+def mkobj():
 	v0 = (-5.0 ,0.0, 0.0)
 	v1 = (0.0 ,5.0, 0.0)
 	v2 = (5.0 ,0.0, 0.0)
 	v3 = (0.0 ,2.0, 0.0)
 	n0 = (sqrt(2.0)/2.0, sqrt(2.0)/2.0, 0.0)
-	vn = ((v0, n0), (v1, n0), (v2, n0), (v3, n0))
 	#
-	return vn
+	return (v0, n0), (v1, n0), (v2, n0), (v3, n0)
 
 #
 # the object itself as an array of vertices and normals

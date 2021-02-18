@@ -24,10 +24,7 @@ def choice(sequence):
 	return sequence[i]
 
 def random_phrase():
-	phrase = ''
-	for i in IndexSet:
-		phrase = phrase + choice(Alphabet)
-	return phrase
+	return ''.join(choice(Alphabet) for _ in IndexSet)
 
 def mutate_phrase(phrase):
 	mutant = phrase

@@ -192,7 +192,7 @@ def drawlistwindow(w, area):
 	h, v = 0, 0
 	for name in w.list:
 		d.text((h, v), name)
-		v = v + lh
+		v += lh
 	showselection(w, d)
 
 def hideselection(w, d):
@@ -316,6 +316,6 @@ def readfp(fp):
 		buf = fp.read(102400) # Reads most samples in one fell swoop
 		if not buf:
 			return data
-		data = data + buf
+		data += buf
 
 main()

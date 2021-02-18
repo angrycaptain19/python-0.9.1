@@ -35,7 +35,7 @@ def open(title, data): # Public function to open a table window
 		if rows > maxrows: maxrows = rows
 		# Width calculations
 		width = colwidth(coldata) + margin
-		totwidth = totwidth + width
+		totwidth += width
 		colstarts.append(totwidth)
 	#
 	# Calculate document and window height
@@ -92,7 +92,7 @@ def update(w, data): # Change the data
 		if rows > maxrows: maxrows = rows
 		# Width calculations
 		width = colwidth(coldata) + margin
-		totwidth = totwidth + width
+		totwidth += width
 		colstarts.append(totwidth)
 	#
 	# Calculate document and window height
@@ -157,7 +157,7 @@ def mup(w, detail): # Mouse up method
 			action(w, string, (icol, irow), detail)
 
 def whichcol(w, h): # Return column number (may be >= len(w.data))
-	for icol in range(0, len(w.data)):
+	for icol in range(len(w.data)):
 		if h < w.colstarts[icol+1]:
 			return icol
 	return len(w.data)
