@@ -28,23 +28,23 @@ def reset():
 	G.aliases = {}
 
 def mkcmdtab():
-	tab = {}
-	tab['alias'] = do_alias
-	tab['cd'] = do_cd
-	tab['debug'] = do_debug
-	tab['grep'] = do_grep
-	tab['help'] = do_help
-	tab['ls'] = do_ls
-	tab['mkdir'] = do_mkdir
-	tab['mv'] = do_mv
-	tab['page'] = do_page
-	tab['pwd'] = do_pwd
-	tab['reset'] = do_reset
-	tab['rm'] = do_rm
-	tab['rmdir'] = do_rmdir
-	tab['sync'] = do_sync
-	tab['unalias'] = do_unalias
-	return tab
+	return {
+	    'alias': do_alias,
+	    'cd': do_cd,
+	    'debug': do_debug,
+	    'grep': do_grep,
+	    'help': do_help,
+	    'ls': do_ls,
+	    'mkdir': do_mkdir,
+	    'mv': do_mv,
+	    'page': do_page,
+	    'pwd': do_pwd,
+	    'reset': do_reset,
+	    'rm': do_rm,
+	    'rmdir': do_rmdir,
+	    'sync': do_sync,
+	    'unalias': do_unalias,
+	}
 
 def main():
 	while 1:
@@ -110,7 +110,7 @@ def expandgloblist(words):
 	res = []
 	for word in words:
 		if hasglobchar(word):
-			res = res + expandglobword(word)
+			res += expandglobword(word)
 		else:
 			res.append(word)
 	return res

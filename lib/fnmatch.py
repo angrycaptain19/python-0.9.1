@@ -29,7 +29,4 @@ def fnmatch1(name, pat):
 	return 1
 
 def fnmatchlist(names, pat):
-	res = []
-	for name in names:
-		if fnmatch(name, pat): res.append(name)
-	return res
+	return [name for name in names if fnmatch(name, pat)]

@@ -32,7 +32,7 @@ def loadfp(fp):
 	while 1:
 		buf = fp.read(16*1024)
 		if not buf: break
-		s = s + buf
+		s += buf
 	return s
 
 def unbias(s):

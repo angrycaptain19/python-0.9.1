@@ -155,12 +155,12 @@ def make_lights():
 	# define material #1
 	#
 	a = []
-	a = a + [EMISSION, 0.0, 0.0, 0.0]
-	a = a + [AMBIENT,  0.1, 0.1, 0.1]
-	a = a + [DIFFUSE,  0.6, 0.3, 0.3]
-	a = a + [SPECULAR,  0.0, 0.6, 0.0]
-	a = a + [SHININESS, 2.0]
-	a = a + [LMNULL]
+	a += [EMISSION, 0.0, 0.0, 0.0]
+	a += [AMBIENT,  0.1, 0.1, 0.1]
+	a += [DIFFUSE,  0.6, 0.3, 0.3]
+	a += [SPECULAR,  0.0, 0.6, 0.0]
+	a += [SHININESS, 2.0]
+	a += [LMNULL]
 	lmdef(DEFMATERIAL, 1, a)
 	#
 	# turn on lighting

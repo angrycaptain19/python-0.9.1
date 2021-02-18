@@ -182,10 +182,7 @@ def remove(list, item):
 # Return a copy with items that occur in skip removed.
 #
 def filter(list, skip):
-	result = []
-	for item in list:
-		if item not in skip: result.append(item)
-	return result
+	return [item for item in list if item not in skip]
 
 
 # Demonstration and testing.

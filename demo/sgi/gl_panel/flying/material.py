@@ -1,26 +1,23 @@
 import light
 
-def mkmatdict () :
-	m = {}
-	m['material 1'] = light.m1
-	m['material 2'] = light.m2
-	m['material 3'] = light.m3
-	m['material 4'] = light.m4
-	m['material 5'] = light.m5
-	m['material 6'] = light.m6
-	m['material 7'] = light.m7
-	m['material 8'] = light.m8
-	m['material 9'] = light.m9
+def mkmatdict():
 	#
-	return m
+	return {
+	    'material 1': light.m1,
+	    'material 2': light.m2,
+	    'material 3': light.m3,
+	    'material 4': light.m4,
+	    'material 5': light.m5,
+	    'material 6': light.m6,
+	    'material 7': light.m7,
+	    'material 8': light.m8,
+	    'material 9': light.m9,
+	}
 
 materdict = mkmatdict ()
 
-def mklichtdict () :
-	m = {}
-	m['light 1'] = light.light1
-	m['light 2'] = light.light2
+def mklichtdict():
 	#
-	return m
+	return {'light 1': light.light1, 'light 2': light.light2}
 
 lichtdict = mklichtdict ()

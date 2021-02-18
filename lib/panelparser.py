@@ -54,7 +54,7 @@ def tokenize_file(fp):
 	while 1:
 		line = fp.readline()
 		if not line: break
-		tokens = tokens + tokenize_string(line)
+		tokens += tokenize_string(line)
 	return tokens
 
 

@@ -266,10 +266,7 @@ def my_dopanel():
 def defpanellist(file):
 	import panelparser
 	descrlist = panelparser.parse_file(open(file, 'r'))
-	panellist = []
-	for descr in descrlist:
-		panellist.append(build_panel(descr))
-	return panellist
+	return [build_panel(descr) for descr in descrlist]
 
 
 # Import everything from built-in method pnl, so the user can always

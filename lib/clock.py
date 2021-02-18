@@ -71,8 +71,7 @@ def realmain():
 			break
 
 def setdimensions(width, height):
-	if width < height: size = width
-	else: size = height
+	size = min(width, height)
 	halfwidth = width/2
 	halfheight = height/2
 	G.center = halfwidth, halfheight

@@ -63,10 +63,7 @@ def make_elements(n, d):
 
 def make_inv(all, n, p):
 	x = poly.one(1, 1)
-	inv = []
-	for a in all:
-		inv.append(norm(poly.times(a, x), n, p))
-	return inv
+	return [norm(poly.times(a, x), n, p) for a in all]
 
 def checkfield(n, p):
 	all = make_elements(n, len(p)-1)

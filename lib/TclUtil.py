@@ -255,13 +255,7 @@ def BalanceQuotes(str, i, end):
 
 # Static data used by Backslash()
 
-_bstab = {}
-_bstab['n'] = '\n'
-_bstab['r'] = '\r'
-_bstab['t'] = '\t'
-_bstab['b'] = '\b'
-_bstab['e'] = '\033'
-_bstab['\n'] = ''
+_bstab = {'n': '\n', 'r': '\r', 't': '\t', 'b': '\b', 'e': '\033', '\n': ''}
 for c in ' {}[]$";\\': _bstab[c] = c
 del c
 
@@ -327,7 +321,7 @@ def Concat(argv):
 	result = ''
 	sep = ''
 	for arg in argv:
-		result = result + (sep + arg)
+		result += sep + arg
 		sep = ' '
 	return result
 
@@ -340,7 +334,7 @@ def BuildList(argv):
 	sep = ''
 	for arg in argv:
 		arg = AddBraces(arg)
-		result = result + (sep + arg)
+		result += sep + arg
 		sep = ' '
 	return result
 

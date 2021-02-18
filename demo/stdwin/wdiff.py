@@ -58,7 +58,8 @@ def close_dirwin(w):
 
 def filediff(a, b, flags): # Display differences between two text files
 	diffcmd = 'diff'
-	if flags: diffcmd = diffcmd + mkarg(flags)
+	if flags:
+		diffcmd += mkarg(flags)
 	diffcmd = diffcmd + mkarg(a) + mkarg(b)
 	difftext = commands.getoutput(diffcmd)
 	return textwin.open_readonly(mktitle(a, b), difftext)
@@ -376,9 +377,8 @@ def nop(args):
 
 def getselection(w):
 	icol, irow = w.selection
-	if 0 <= icol < len(w.data):
-		if 0 <= irow < len(w.data[icol]):
-			return w.data[icol][irow][0]
+	if 0 <= icol < len(w.data) and 0 <= irow < len(w.data[icol]):
+		return w.data[icol][irow][0]
 	stdwin.message('no selection')
 	return ''
 

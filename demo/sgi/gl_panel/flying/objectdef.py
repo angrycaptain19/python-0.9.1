@@ -42,10 +42,10 @@ def makespinobject (smooth,rot,n,x1,z1,nx1,nz1,x2,z2,nx2,nz2) :
 	#
 	return object
 
-def makesphere (n):
+def makesphere(n):
 	asin = []
 	acos = []
-	for i in range (0, n-1):
+	for i in range(n-1):
 		asin.append (sin((pi/float (n))*(1.0+float (i))))
 		acos.append(cos((pi/float (n))*(1.0+float (i))))
 	#
@@ -114,23 +114,22 @@ def makepyramid() :
 	#
 	return makespinobject(0,4,3,x1,z1,nx1,nz1,x2,z2,nx2,nz2)
 
-def makeobjects () :
+def makeobjects():
 	cube = makecube()
 	sphere = makesphere (6)
 	cylinder = makecylinder (6)
 	cone = makecone (6)
 	pyramid = makepyramid ()
 	#
-	odict = {}
-	odict ['cube'] = cube
-	odict ['pyramid'] = pyramid
-	odict ['sphere'] = sphere
-	odict ['cylinder'] = cylinder
-	odict ['cone'] = cone
-	odict ['diamond'] = cube
-	odict ['disk'] = sphere
-	#
-	return odict
+	return {
+	    'cube': cube,
+	    'pyramid': pyramid,
+	    'sphere': sphere,
+	    'cylinder': cylinder,
+	    'cone': cone,
+	    'diamond': cube,
+	    'disk': sphere,
+	}
 
 
 renderfuncs = [bgnpolygon, endpolygon]

@@ -331,11 +331,11 @@ def makehands(localtime):
 def makelist(little_hand, big_hand, seconds_hand):
 	total = []
 	if Gl.cyan or not Gl.colorsubset:
-		total = total + makesublist(big_hand, Gl.indices[0])
+		total += makesublist(big_hand, Gl.indices[0])
 	if Gl.magenta or not Gl.colorsubset:
-		total = total + makesublist(little_hand, Gl.indices[1])
+		total += makesublist(little_hand, Gl.indices[1])
 	if Gl.yellow or not Gl.colorsubset:
-		total = total + makesublist(MIDN, Gl.indices[2])
+		total += makesublist(MIDN, Gl.indices[2])
 	total.sort()
 	return total
 
@@ -610,7 +610,8 @@ def definecolor(rgb):
 # Compute n**i
 def pow(n, i):
 	x = 1
-	for j in range(i): x = x*n
+	for _ in range(i):
+		x *= n
 	return x
 
 def mouseclick(mouse, updown, x, y):
